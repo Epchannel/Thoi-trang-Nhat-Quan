@@ -1,4 +1,8 @@
 /* CSS Document */
+body {
+    font-family: 'K2D', sans-serif !important;
+}
+
 .modal {
 display: none; 
 position: fixed; 
@@ -70,3 +74,28 @@ width: 100%;
 .dropup-content a:hover {background-color:#ddd}
 .dropup:hover .dropup-content {display:block;}
 .dropup:hover .dropbtn {background:none}
+
+/* Tạo hiệu ứng rung */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+    100% { transform: translateX(0); }
+  }
+  
+  /* Áp dụng hiệu ứng rung mặc định */
+  #contact_truottrai a,
+  #contact_truotphai a {
+    position: fixed;
+    transition: 0.3s;
+    padding: 15px;
+    width: 55px;
+    text-decoration: none;
+    font-size: 25px;
+    z-index: 2;
+    display: inline-block;
+    animation: shake 0.5s infinite; /* Hiệu ứng rung tự động lặp vô hạn */
+  }
+
+  
