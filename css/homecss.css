@@ -98,4 +98,55 @@ width: 100%;
     animation: shake 0.5s infinite; /* Hiệu ứng rung tự động lặp vô hạn */
   }
 
+/* Định nghĩa custom property --num */
+@property --num {
+    syntax: '<integer>';
+    initial-value: 0;
+    inherits: false;
+  }
+  
+  /* Các ô đếm */
+  .counter {
+    font-size: 1.5rem; /* Giảm kích thước của số */
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    counter-reset: num var(--num);
+    opacity: 0; /* Ẩn ban đầu */
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .counter::before {
+    content: counter(num);
+    display: block;
+    font-size: 2rem; /* Giảm kích thước số chính */
+  }
+  
+  /* Hiển thị nhãn phía dưới */
+  .counter .label {
+    display: block;
+    font-size: 0.9rem; /* Giảm kích thước của nhãn */
+    color: #ffffff;
+    margin-top: 0.5rem;
+  }
+  
+  /* Hiển thị khi cuộn vào khung nhìn */
+  .counter.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Hiệu ứng ẩn ban đầu */
+.counter {
+    opacity: 0; /* Ẩn phần tử */
+    transform: translateY(20px); /* Đẩy xuống một chút */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Hiệu ứng mượt */
+  }
+  
+  /* Khi phần tử hiển thị trong khung nhìn */
+  .counter.visible {
+    opacity: 1; /* Hiển thị */
+    transform: translateY(0); /* Đưa về vị trí ban đầu */
+  }
   
