@@ -149,4 +149,13 @@ width: 100%;
     opacity: 1; /* Hiển thị */
     transform: translateY(0); /* Đưa về vị trí ban đầu */
   }
+
+@media screen and (max-width: 700px) {
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Căn giữa theo chiều ngang */
+    align-items: center; /* Căn giữa theo chiều dọc */
+  }
+}
   
